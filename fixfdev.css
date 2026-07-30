@@ -1,0 +1,94 @@
+/* ============================================================
+   fixfdev-only styles — loaded after the shared common style.css.
+   Everything else (ground, type, .content column, .sidebar, footer)
+   comes from ../common/assets/style.css.
+   ============================================================ */
+
+/* ── Masthead — the fix𝑓 wordmark ───────────────────────── */
+.masthead {
+  padding-top: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.wordmark {
+  display: block;
+  height: auto;
+  width: clamp(75px, 21vw, 105px);
+}
+
+/* ── App directory — download cards, borrowed from each app's own
+   download CTA (nback.xyz, tamarillo.nz), pointed at the app page
+   instead of the .dmg. ───────────────────────────────────────── */
+.download-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--space-lg);
+}
+
+.download-card {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 0.9rem 1.6rem 0.9rem 0.9rem;
+  border-radius: 1.4rem;
+  background-color: var(--bg-section);
+  border: 1px solid var(--border-main);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.download-card:hover,
+.download-card:focus-visible {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -18px rgba(0, 0, 0, 0.4);
+}
+
+.app-icon {
+  flex: none;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 22%;
+  box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.45);
+}
+
+/* Goldfish artwork is a transparent, non-square illustration — object-fit
+   + a filled ground keep it readable inside the same squircle treatment. */
+.app-icon-goldfish {
+  object-fit: contain;
+  padding: 0.4rem;
+  background-color: var(--bg-beige);
+}
+
+.download-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.app-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--fg-brown-dk);
+}
+
+.download-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent-blue);
+}
+
+@media (max-width: 640px) {
+  .download-card {
+    padding: 0.8rem 1.1rem 0.8rem 0.8rem;
+    gap: 0.85rem;
+  }
+
+  .app-icon {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+}
